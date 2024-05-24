@@ -1,3 +1,5 @@
+import React from "react";
+
 function CategoryCard(props) {
     return (
         <div className="w-[20%] text-center bg-[#376E6F] rounded-lg ">
