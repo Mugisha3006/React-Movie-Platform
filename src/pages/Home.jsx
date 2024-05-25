@@ -2,8 +2,11 @@ import React, {useEffect, useState} from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import CategoryCard from "../components/CategoryCard";
+import TopMoviesCard from "../components/TopMoviesCard";
+
 function Home() {
     let [genres, setGenres] = useState(null);
+    let [topmovie, setTopMovie] = useState(null);
 
     function fetchData() {
         let apiUrl = "http://localhost:1337/api/genres?populate=*";
@@ -19,6 +22,22 @@ function Home() {
 
     useEffect(() => {
         fetchData();
+    }, [])
+
+    function fetchTopMovie() {
+        let apiUrl = "http://localhost:1337/api/top-movies?populate=*"
+        fetch(apiUrl)
+            .then((res) => {
+                return res.json();
+            })
+            .then((dataObject) => {
+                let topmovieData = dataObject.data
+                setTopMovie(topmovieData)
+        })
+    }
+
+    useEffect(() => {
+        fetchTopMovie()
     }, [])
 
     return (
@@ -41,7 +60,6 @@ function Home() {
                                     key={item.id}
                                     genre={item.attributes.title}
                                     image={`http://localhost:1337${item.attributes.image.data[0].attributes.url}`}
-                                    // image={"http://localhost:1337/uploads/thumbnail_action_8977fca826.png"}
                                 />
                             );
                         })
@@ -50,8 +68,28 @@ function Home() {
                             <p>Loading...</p>
                     )
                         
+                }     
+            </section>
+
+                <h1 className="font-sans text-white text-6xl p-8 mb-4 text-center">My Top-5 Fabulous Movies Of All Time!</h1>
+            <section className="w-[75%] pb-8 m-auto flex justify-around gap-4">
+                {
+                    topmovie !== null ? (
+                        topmovie.map((item) => {
+                            return (
+                                <TopMoviesCard
+                                    key={item.id}
+                                    rank={item.attributes.rank}
+                                    topmovie={item.attributes.title}
+                                    image={`http://localhost:1337${item.attributes.image.data[0].attributes.url}`}
+
+                                />
+                            );
+                        })
+                    ) : (
+                            <p>Loading...</p>
+                    )
                 }
-                   
             </section>
 
             
