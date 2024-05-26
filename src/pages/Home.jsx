@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import CategoryCard from "../components/CategoryCard";
 import TopMoviesCard from "../components/TopMoviesCard";
 import Trending from "../components/Trending";
+import Footer from "../components/Footer";
 
 function Home() {
     let [genres, setGenres] = useState(null);
@@ -129,8 +130,8 @@ function Home() {
 
                 }
             </section>
-
             
+            <Footer/>
         </div>
     )
 }
