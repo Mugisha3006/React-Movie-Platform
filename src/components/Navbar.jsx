@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 function Navbar() {
     return (
         <div>
-            <section className=" bg-[#DA7B93] text-white flex justify-around items-center p-8 font-sans">
+            <section className=" bg-[#DA7B93] text-white flex justify-around items-center p-8 font-sans uppercase">
                 <h1 className="text-5xl font-bold hover:cursor-pointer text-[#2F4454]">M%M</h1>
-                <ul className="flex gap-8 text-xl">
+                <ul className="flex gap-8 text-lg">
                     <li>
                         <Link to="/">Home</Link>
                     </li>
@@ -17,12 +17,12 @@ function Navbar() {
                         <Link to="/">favourites</Link>
                     </li>
                     <li>
-                        <Link to="/">About-Us</Link>
+                        <Link to="/">Contact Us</Link>
                     </li>
                     
                 </ul>
 
-                <ul className="flex justify-around gap-8 font-bold text-xl items-center">
+                <ul className="flex justify-around gap-8 font-bold text-lg items-center">
                     <li>
                         <Link to="/">Sign In</Link>
                     </li>
