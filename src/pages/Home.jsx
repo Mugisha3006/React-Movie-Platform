@@ -12,7 +12,7 @@ function Home() {
     let [trendings, setTrendings] = useState(null);
 
     function fetchData() {
-        let apiUrl = "http://localhost:1337/api/genres?populate=*";
+        let apiUrl = "https://react-movie-backend-ksa4.onrender.com/api/genres?populate=*";
         fetch(apiUrl)
         .then((response) => {
             return response.json();
@@ -28,7 +28,7 @@ function Home() {
     }, [])
 
     function fetchTopMovie() {
-        let apiUrl = "http://localhost:1337/api/top-movies?populate=*"
+        let apiUrl = "https://react-movie-backend-ksa4.onrender.com/api/top-movies?populate=*"
         fetch(apiUrl)
             .then((res) => {
                 return res.json();
@@ -44,7 +44,7 @@ function Home() {
     }, [])
 
     function fetchTrendingMovie() {
-        let api = "http://localhost:1337/api/trendings?populate=*"
+        let api = "https://react-movie-backend-ksa4.onrender.com/api/trendings?populate=*"
         fetch(api)
             .then((res) => {
                 return res.json();
@@ -78,7 +78,7 @@ function Home() {
                                 <CategoryCard
                                     key={item.id}
                                     genre={item.attributes.title}
-                                    image={`http://localhost:1337${item.attributes.image.data[0].attributes.url}`}
+                                    image={`https://react-movie-backend-ksa4.onrender.com${item.attributes.image.data[0].attributes.url}`}
                                 />
                             );
                         })
@@ -100,7 +100,7 @@ function Home() {
                                     key={item.id}
                                     rank={item.attributes.rank}
                                     topmovie={item.attributes.title}
-                                    image={`http://localhost:1337${item.attributes.image.data[0].attributes.url}`}
+                                    image={`https://react-movie-backend-ksa4.onrender.com${item.attributes.image.data[0].attributes.url}`}
 
                                 />
                             );
@@ -120,7 +120,7 @@ function Home() {
                                 <Trending
                                     key={item.id}
                                     movie={item.attributes.movie}
-                                    image={`http://localhost:1337${item.attributes.image.data[0].attributes.url}`}
+                                    image={`https://react-movie-backend-ksa4.onrender.com${item.attributes.image.data[0].attributes.url}`}
                                 />
                             );
                         })
