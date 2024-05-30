@@ -16,30 +16,32 @@ function Navbar() {
                         <i className={`bx ${menuOpen ? 'bx-x font-bold' : 'bx-menu font-bold'}`}></i>
                     </Link>
                 </div>
-                <ul className="flex gap-8 text-lg">
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/">Categories</Link>
-                    </li>
-                    <li>
-                        <Link to="/">favourites</Link>
-                    </li>
-                    <li>
-                        <Link to="/">Contact Us</Link>
-                    </li>
-                    
-                </ul>
+                <nav className={`absolute md:relative md:left-auto md:top-auto bg-[#1F2833] md:bg-transparent block md:flex flex-col md:flex-row md:items-center md:w-full top-10 md:top-5 right-0 left-0  pt-20 md:pt-0 pb-20 md:pb-0 mt-5 md:mt-0 ${menuOpen ? 'block' : 'hidden'} md:flex transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'} md:translate-x-0 `}>
+                    <ul className="flex gap-8 text-lg flex-col md:flex-row m-auto font-bold text-center">
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/">Categories</Link>
+                        </li>
+                        <li>
+                            <Link to="/">favourites</Link>
+                        </li>
+                        <li>
+                            <Link to="/">Contact Us</Link>
+                        </li>
+                        
+                    </ul>
 
-                <ul className="flex justify-around gap-8 font-bold text-lg items-center">
-                    <li>
-                        <Link to="/">Sign In</Link>
-                    </li>
-                    <li className="text-white bg-[#2F4454] p-2 rounded-full ">
-                        <Link to="/">Sign Up</Link>
-                    </li>
-                </ul>
+                    <ul className="flex flex-col md:flex-row justify-center mt-8 md:mt-0 gap-8 font-bold text-lg items-center">
+                        <li>
+                            <Link to="/">Sign In</Link>
+                        </li>
+                        <li className="text-white bg-[#2F4454] p-2 rounded-full ">
+                            <Link to="/">Sign Up</Link>
+                        </li>
+                    </ul>
+                </nav>
             </section>
         </div>
     )
