@@ -101,6 +101,7 @@ function Home() {
                                     rank={item.attributes.rank}
                                     topmovie={item.attributes.title}
                                     image={`https://react-movie-backend-ksa4.onrender.com${item.attributes.image.data[0].attributes.url}`}
+                                    trailer={item.attributes.trailer}
 
                                 />
                             );
@@ -121,6 +122,7 @@ function Home() {
                                     key={item.id}
                                     movie={item.attributes.movie}
                                     image={`https://react-movie-backend-ksa4.onrender.com${item.attributes.image.data[0].attributes.url}`}
+                                    trailer={item.attributes.trailer}
                                 />
                             );
                         })
