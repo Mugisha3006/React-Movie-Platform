@@ -68,8 +68,8 @@ function Home() {
                 image="https://html-css-movie-site.netlify.app/snaps/yellowstone.png"
             />
 
-            <h1 className="font-sans text-white text-6xl p-8 mb-4 text-center">Movie Categories/Genres</h1>
-            <section className="w-[75%] pb-8 m-auto flex justify-around gap-4">
+            <h1 className="font-sans text-white md:text-6xl text-4xl p-8 mb-4 text-center">Movie Categories/Genres</h1>
+            <section className="md:w-[75%] w-full pb-8 m-auto flex md:flex-row flex-col md:justify-around gap-4">
 
                 {
                     genres !== null ?(
@@ -90,8 +90,8 @@ function Home() {
                 }     
             </section>
 
-                <h1 className="font-sans text-white text-6xl p-8 mb-4 text-center">My Top-5 Fabulous Movies Of All Time!</h1>
-            <section className="w-[75%] pb-8 m-auto flex justify-around gap-4">
+                <h1 className="font-sans text-white md:text-6xl text-3xl p-8 mb-4 text-center">My Top-5 Fabulous Movies Of All Time!</h1>
+            <section className="md:w-[75%] pb-8 m-auto flex md:flex-row flex-col justify-around gap-4">
                 {
                     topmovie !== null ? (
                         topmovie.map((item) => {
@@ -112,8 +112,8 @@ function Home() {
                 }
             </section>
                 
-            <h1 className="font-sans text-white text-6xl p-8 mb-4 text-center">Trending Movies!</h1>
-            <section className="w-[75%] pb-8 m-auto flex justify-around gap-4">
+            <h1 className="font-sans text-white md:text-6xl text-4xl p-8 mb-4 text-center">Trending Movies!</h1>
+            <section className="w-[75%] pb-8 m-auto flex md:flex-row flex-col justify-around gap-4">
                 {
                     trendings !== null ? (
                         trendings.map((item) => {
